@@ -3,14 +3,14 @@ Cc: lc-support@llnl.gov, help@olcf.ornl.gov, consult@nersc.gov, support@alcf.anl
 Subject: TSV/ENST v0.3 - Open executable energy/cost replay for HPC policy evaluation
 Body:
 # GENESIS Integration Packet
-# TSV-ENST v0.2 (tag placeholder)
+# TSV-ENST v0.3 (tag placeholder)
 # Generated: 2025-12-27T13:04:40.521Z
 
 ## Reproduction Commands
 
 ```bash
 # Clone and install
-git clone <repo-url>
+git clone https://github.com/tsvt1/tsv-enst
 cd tsv-enst
 npm install
 

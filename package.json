@@ -1,6 +1,6 @@
 {
   "name": "tsv-enst",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "TSV-ENST: Temporal State Vector with Energy-Normalized System Throughput computation",
   "type": "module",
   "engines": {

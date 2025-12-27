@@ -2,14 +2,14 @@ To: AICommunityInput@science.doe.gov, genesismission-partnerships@hq.doe.gov
 Subject: GENESIS RFI - Executable TSV/ENST energy/cost replay artifact (v0.3)
 Body:
 # GENESIS Integration Packet
-# TSV-ENST v0.2 (tag placeholder)
+# TSV-ENST v0.3 (tag placeholder)
 # Generated: 2025-12-27T13:04:40.521Z
 
 ## Reproduction Commands
 
 ```bash
 # Clone and install
-git clone <repo-url>
+git clone https://github.com/tsvt1/tsv-enst
 cd tsv-enst
 npm install
 
