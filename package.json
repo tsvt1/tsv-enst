@@ -1,0 +1,39 @@
+{
+  "name": "tsv-enst",
+  "version": "0.2.0",
+  "description": "TSV-ENST: Temporal State Vector with Energy-Normalized System Throughput computation",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "tsv-export": "./cli/tsv-export.js",
+    "enst": "./cli/enst.js",
+    "replay": "./cli/replay.js"
+  },
+  "scripts": {
+    "tsv-export": "node cli/tsv-export.js",
+    "enst": "node cli/enst.js",
+    "replay": "node cli/replay.js",
+    "test": "node --test test/*.test.js",
+    "lint": "eslint src/ cli/",
+    "generate:public-traces": "node scripts/generate-public-traces.js",
+    "demo:public": "node scripts/demo-public.js",
+    "pack:genesis": "node scripts/pack-genesis.js"
+  },
+  "keywords": [
+    "tsv",
+    "enst",
+    "energy-efficiency",
+    "cluster-telemetry",
+    "numeric-compute",
+    "genesis"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ndjson": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}

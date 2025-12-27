@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tsv-enst.spec/tsv.schema.json",
+  "title": "Temporal State Vector (TSV)",
+  "description": "Normalized telemetry window for compute cluster state representation",
+  "type": "object",
+  "required": [
+    "ts_start",
+    "ts_end",
+    "site_id",
+    "cpu_util",
+    "resource_seconds"
+  ],
+  "properties": {
+    "ts_start": {
+      "type": "integer",
+      "description": "Window start timestamp (unix epoch microseconds)"
+    },
+    "ts_end": {
+      "type": "integer",
+      "description": "Window end timestamp (unix epoch microseconds)"
+    },
+    "site_id": {
+      "type": "string",
+      "description": "Unique identifier for compute site"
+    },
+    "cluster_id": {
+      "type": ["string", "null"],
+      "description": "Cluster identifier within site"
+    },
+    "cpu_util": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Mean CPU utilization ratio [0,1] over window"
+    },
+    "gpu_util": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Mean GPU utilization ratio [0,1] over window"
+    },
+    "mem_util": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Mean memory utilization ratio [0,1] over window"
+    },
+    "job_queue_depth": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of pending work units at window start"
+    },
+    "resource_seconds": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total resource-seconds consumed in window"
+    },
+    "cpu_core_seconds": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "CPU core-seconds consumed in window"
+    },
+    "gpu_seconds": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "GPU-seconds consumed in window"
+    },
+    "validated_steps": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Domain-validated computation steps"
+    },
+    "timesteps": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Simulation timesteps completed"
+    },
+    "power_w": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Mean power draw in watts over window"
+    },
+    "energy_j": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Total energy consumed in joules over window"
+    },
+    "pue": {
+      "type": ["number", "null"],
+      "minimum": 1,
+      "description": "Power Usage Effectiveness ratio"
+    },
+    "thermal_headroom_w": {
+      "type": ["number", "null"],
+      "description": "Available thermal capacity in watts"
+    },
+    "grid_stress_index": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Grid stress indicator [0,1]"
+    },
+    "work_units": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Computed work units for ENST calculation"
+    },
+    "work_units_mode": {
+      "type": ["string", "null"],
+      "enum": ["infra", "domain", "infra_fallback", null],
+      "description": "Mode used to compute work_units"
+    },
+    "enst": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Energy-Normalized System Throughput: work_units / energy_j"
+    },
+    "window_duration_s": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Window duration in seconds"
+    },
+    "price_usd_per_mwh": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Electricity price in USD per megawatt-hour"
+    },
+    "data_source": {
+      "type": ["string", "null"],
+      "description": "Data origin: 'synthetic' or 'real:<name>'"
+    }
+  },
+  "additionalProperties": false
+}

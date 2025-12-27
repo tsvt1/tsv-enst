@@ -1,0 +1,56 @@
+To: kenny.gruchalla@nrel.gov, HPC-Help@nrel.gov
+Subject: Energy-normalized compute cost replay (executable, TSV/ENST v0.3)
+Body:
+# GENESIS Integration Packet
+# TSV-ENST v0.2 (tag placeholder)
+# Generated: 2025-12-27T13:04:40.521Z
+
+## Reproduction Commands
+
+```bash
+# Clone and install
+git clone <repo-url>
+cd tsv-enst
+npm install
+
+# Run public traces demo
+npm run demo:public
+
+# Verify outputs
+cat outputs/leaderboard_real.csv | head -5
+cat outputs/replay_summary_real.json | head -20
+cat outputs/HASHES.txt
+```
+
+## Key Metrics
+
+delta_cost_usd_per_1e9_work_units: $29.27
+
+This metric represents the cost change per 1 billion work units
+when applying an energy_cap_w=2500 policy vs baseline.
+Negative values indicate savings from improved ENST.
+
+## SHA256 Hashes
+
+schema_sha256=77960ef4e97ea813bd57c28e3d1989211555093f6e4d2525f2238a67feb1859a
+leaderboard_real_sha256=90af749ecfeedc3d77eda20bce88e1a39872b62a3a9c0623caf00c17fe451ede
+replay_summary_real_sha256=d4e67796d03f220a15d5aeb830cccab38df2660547675a4e0ec1cc21e897093c
+
+## Files
+
+- spec/tsv.schema.json: TSV schema definition
+- outputs/tsv_real.ndjson: Raw TSV records (real:public-traces)
+- outputs/leaderboard_real.csv: Site rankings with cost
+- outputs/replay_summary_real.json: Policy impact analysis
+- outputs/HASHES.txt: Verification hashes
+
+## Data Source
+
+data_source=real:public-traces
+Deterministic traces from fixed seed (20241215) for reproducibility.
+No external downloads required.
+
+Attachments:
+outputs/leaderboard_real.csv
+outputs/replay_summary_real.json
+outputs/HASHES.txt
